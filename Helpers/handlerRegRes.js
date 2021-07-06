@@ -35,13 +35,6 @@ handler.handleRegRes = (reg, res) => {
     ? routes[trimmedPath]
     : notFoundHandler;
 
-  chosenHandler(requestResponse, (statusCode, payload) => {
-    statusCode = typeof statusCode === "number" ? statusCode : 500;
-    payload = typeof payload === "object" ? payload : {};
-    const payloadString = JSON.stringify(payload);
-    res.writeHead(statusCode);
-    res.end(payloadString);
-  });
   // Proccess request data
   const decoder = new StringDecoder("utf-8");
   let bodyData = "";
@@ -51,7 +44,13 @@ handler.handleRegRes = (reg, res) => {
 
   reg.on("end", () => {
     bodyData += decoder.end();
-    res.end("Nodejs serve is running!");
+    chosenHandler(requestResponse, (statusCode, payload) => {
+      statusCode = typeof statusCode === "number" ? statusCode : 500;
+      payload = typeof payload === "object" ? payload : {};
+      const payloadString = JSON.stringify(payload);
+      res.writeHead(statusCode);
+      res.end(payloadString);
+    });
   });
 };
 

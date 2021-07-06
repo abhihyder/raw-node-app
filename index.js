@@ -6,6 +6,7 @@ Title : Uptime monitoring application
 
 const http = require("http");
 const { handleRegRes } = require("./Helpers/handlerRegRes");
+const data = require("./lib/data");
 
 // App object - module scaffolding
 const app = {};
@@ -16,6 +17,10 @@ app.config = {
   port: 3000,
 };
 
+//write Data
+data.create("test", "testFile", { name: "Abhi Hyder" }, (err) => {
+  console.log("Error to write is " + err);
+});
 // Create server
 
 app.createServer = () => {
