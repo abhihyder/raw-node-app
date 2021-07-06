@@ -1,14 +1,18 @@
 {
-    "name": "Learn_nodeJS",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "nodemon index"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+  "name": "Learn_nodeJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.9",
+    "to": "^0.2.9",
+    "update": "^0.7.4"
   }
-  
+}
