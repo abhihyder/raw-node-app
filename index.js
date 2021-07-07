@@ -17,10 +17,35 @@ app.config = {
   port: 3000,
 };
 
-//write Data
+//write Data ------------------------
+/*
 data.create("test", "testFile", { name: "Abhi Hyder" }, (err) => {
   console.log("Error to write is " + err);
 });
+*/
+
+//Read Data --------------------------------
+/*
+data.read("test", "testFile", (err, result) => {
+  console.log("Error to read is " + err);
+  console.log("Read data is " + result);
+});
+*/
+
+//Update Data ------------------------
+/*
+data.update("test", "testFile", { name: "Hyder" }, (err) => {
+  console.log("Error to write is " + err);
+});
+*/
+
+//Delete Data --------------------------------
+/*
+data.delete("test", "testFile", (err) => {
+  console.log("Error to delete is " + err);
+});
+ */
+
 // Create server
 
 app.createServer = () => {
